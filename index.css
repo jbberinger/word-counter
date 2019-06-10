@@ -1,0 +1,72 @@
+html,
+body {
+  font-family: "Share Tech Mono", monospace;
+  background: #89abe3;
+  color: black;
+  font-size: 13px;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  margin: 0;
+}
+
+ol {
+  -webkit-margin-before: 0.5em;
+          margin-block-start: 0.5em;
+  -webkit-padding-start: 20px;
+          padding-inline-start: 20px;
+}
+
+.container {
+  padding: 10px 10px;
+  height: calc(100vh - 20px);
+}
+
+.grid {
+  padding: 10px 10px;
+  height: calc(100vh - 20px);
+  margin: 0;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: minmax(250px, 1fr) minmax(250px, 3fr);
+      grid-template-columns: minmax(250px, 1fr) minmax(250px, 3fr);
+  -ms-grid-rows: minmax(125px, 1fr) minmax(250px, 3fr);
+      grid-template-rows: minmax(125px, 1fr) minmax(250px, 3fr);
+  grid-row-gap: 10px;
+  grid-column-gap: 10px;
+      grid-template-areas: "textarea info" "textarea chart";
+}
+
+textarea {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 1;
+  grid-area: textarea;
+  background: #bcf8ec;
+  padding: 3px 3px;
+  font-size: 13px;
+  border: none;
+  resize: none;
+}
+
+textarea:focus {
+  outline: none;
+}
+
+.info {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: info;
+  background: #bcf8ec;
+  padding: 3px 3px;
+}
+
+#chart {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: chart;
+  background: #bcf8ec;
+}
+/*# sourceMappingURL=index.css.map */

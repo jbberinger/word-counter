@@ -1,0 +1,70 @@
+$main-color: #89abe3;
+$second-color: #bcf8ec;
+$third-color: #8b687f;
+$fourth-color: #7b435b;
+$fifth-color: #2d2327;
+
+@mixin cell-padding {
+  padding: 3px 3px;
+}
+
+html,
+body {
+  font-family: "Share Tech Mono", monospace;
+  background: $main-color;
+  color: black;
+  font-size: 13px;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  margin: 0;
+}
+
+ol {
+  margin-block-start: 0.5em;
+  padding-inline-start: 20px;
+}
+
+.container {
+  padding: 10px 10px;
+  height: calc(100vh - 20px);
+}
+
+.grid {
+  padding: 10px 10px;
+  height: calc(100vh - 20px);
+  margin: 0;
+  display: grid;
+  grid-template-columns: minmax(250px, 1fr) minmax(250px, 3fr);
+  grid-template-rows: minmax(125px, 1fr) minmax(250px, 3fr);
+  grid-row-gap: 10px;
+  grid-column-gap: 10px;
+  grid-template-areas:
+    "textarea info"
+    "textarea chart";
+}
+
+textarea {
+  grid-area: textarea;
+  background: $second-color;
+  @include cell-padding;
+  font-size: 13px;
+  border: none;
+  resize: none;
+  &:focus {
+    outline: none;
+  }
+}
+
+.info {
+  grid-area: info;
+  background: $second-color;
+  @include cell-padding;
+}
+
+#chart {
+  grid-area: chart;
+  background: $second-color;
+}
