@@ -3,3 +3,6 @@
 
 #scss compilation
 *.css.map
+
+#misc
+.eslintrc.json
