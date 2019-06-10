@@ -5,4 +5,4 @@
 *.css.map
 
 #misc
-.eslintrc.json
+*.eslintrc.json
