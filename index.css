@@ -1,6 +1,6 @@
 html,
 body {
-  font-family: "Share Tech Mono", monospace;
+  font-family: "IBM Plex Mono", monospace;
   background: #89abe3;
   color: black;
   font-size: 13px;
@@ -8,15 +8,14 @@ body {
   padding: 0;
 }
 
-h1 {
-  margin: 0;
+h1,
+h2 {
+  margin: 5px;
 }
 
-ol {
-  -webkit-margin-before: 0.5em;
-          margin-block-start: 0.5em;
-  -webkit-padding-start: 20px;
-          padding-inline-start: 20px;
+ul {
+  list-style-type: none;
+  padding: 0;
 }
 
 .container {
@@ -30,21 +29,25 @@ ol {
   margin: 0;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: minmax(250px, 1fr) minmax(250px, 3fr);
-      grid-template-columns: minmax(250px, 1fr) minmax(250px, 3fr);
+  -ms-grid-columns: minmax(250px, 2fr) minmax(100px, 1fr) minmax(250px, 4fr);
+      grid-template-columns: minmax(250px, 2fr) minmax(100px, 1fr) minmax(250px, 4fr);
   -ms-grid-rows: minmax(125px, 1fr) minmax(250px, 3fr);
       grid-template-rows: minmax(125px, 1fr) minmax(250px, 3fr);
   grid-row-gap: 10px;
   grid-column-gap: 10px;
-      grid-template-areas: "textarea info" "textarea chart";
+      grid-template-areas: "textarea options info" "textarea chart chart";
+}
+
+.grid-cell {
+  background: #bcf8ec;
 }
 
 textarea {
+  font-family: "Share Tech Mono", monospace;
   -ms-grid-row: 1;
   -ms-grid-row-span: 2;
   -ms-grid-column: 1;
   grid-area: textarea;
-  background: #bcf8ec;
   padding: 3px 3px;
   font-size: 13px;
   border: none;
@@ -55,18 +58,30 @@ textarea:focus {
   outline: none;
 }
 
-.info {
+.stats {
   -ms-grid-row: 1;
-  -ms-grid-column: 2;
+  -ms-grid-column: 3;
   grid-area: info;
-  background: #bcf8ec;
   padding: 3px 3px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.stats-content {
+  text-align: center;
 }
 
 #chart {
   -ms-grid-row: 2;
   -ms-grid-column: 2;
+  -ms-grid-column-span: 2;
   grid-area: chart;
-  background: #bcf8ec;
 }
 /*# sourceMappingURL=index.css.map */

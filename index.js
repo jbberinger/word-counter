@@ -3,6 +3,8 @@ const padding = 3;
 let chartElement;
 
 const store = {
+  words: [],
+  wordCount: [],
   dataSet: [],
   svg: undefined,
   barChart: undefined,
@@ -20,6 +22,7 @@ const countWords = (text) => {
 
   // Filters out non alphabetic characters and apostrophies
   const words = text.toLowerCase().replace(regex, ' ').split(' ').filter(w => w);
+  store.words = words;
   const wordCount = [];
 
   // Iterates word array.
@@ -81,19 +84,36 @@ const redrawBarChart = () => {
     .attr('width', xScale.bandwidth())
     .attr('height', d => height - yScale(d[1]) - padding)
     .attr('x', d => xScale(d[0]))
-    .attr('y', d => yScale(d[1]));
+    .attr('y', d => yScale(d[1]))
+    // eslint-disable-next-line func-names
+    .on('mouseover', function (d, i) {
+      d3.select(this)
+        .attr('fill', '#7b435b')
+    })
+    // eslint-disable-next-line func-names
+    .on('mouseout', function (d, i) {
+      d3.select(this)
+        .attr('fill', 'black')
+    });
 };
 
-const updateStats = (wordCount) => {
-  const topFive = wordCount.slice(0, 5);
-  const longestTopFive = Math.max(...topFive.map(w => w[0].length));
+const updateStats = () => {
+  const { words, wordCount } = store;
+  d3.select('#most-common-title').text('Most Common Word');
+  d3.select('#most-common').html(`"${wordCount[0][0]}"`);
 
-  d3.select('#title').text('Top 5');
-  d3.select('#text').html(`<ol>${topFive.map(w => `<li>${w[0]}${'.'.repeat(longestTopFive - w[0].length + 2)}${w[1]}</li>`).join('')}</ol>`);
+  d3.select('#unique-title').text('Unique Words');
+  d3.select('#unique').html(wordCount.length);
+
+  d3.select('#total-title').text('Total Words');
+  d3.select('#total').html(words.length);
+
+  d3.select('#longest-title').text('Longest Word');
+  d3.select('#longest').html(`"${words.reduce((a, b) => (a.length < b.length ? b : a), '')}"`);
 };
 
 // Reduces array to top 30 used words
-const trimData = data => data.slice(0, 30);
+const trimData = data => data.slice(0, 50);
 
 // Wraps timer around function to ensure it is only called
 // after there is a specified delay between calls
@@ -115,8 +135,10 @@ const debounce = (fn, delay) => {
 // Handles textarea input
 const handleInput = async () => {
   const { value } = document.getElementById('textarea');
-  store.dataSet = trimData(countWords(value));
-  updateStats(store.dataSet);
+  const wordCount = countWords(value);
+  store.wordCount = wordCount;
+  store.dataSet = trimData(wordCount);
+  updateStats();
   redrawBarChart();
 };
 
@@ -125,6 +147,7 @@ const initialize = async (url) => {
   const wordCount = countWords(text);
   d3.select('textarea').text(text);
 
+  store.wordCount = wordCount;
   store.dataSet = trimData(wordCount);
   chartElement = document.getElementById('chart');
 
@@ -135,11 +158,11 @@ const initialize = async (url) => {
     .enter()
     .append('rect');
 
-  updateStats(store.dataSet);
+  updateStats(wordCount);
   redrawBarChart();
 
   window.addEventListener('resize', debounce(redrawBarChart, 50));
-  document.getElementById('textarea').addEventListener('keyup', handleInput);
+  document.getElementById('textarea').addEventListener('keyup', debounce(handleInput, 300));
 };
 
 // calls functions for development purposes

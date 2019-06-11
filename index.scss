@@ -10,7 +10,7 @@ $fifth-color: #2d2327;
 
 html,
 body {
-  font-family: "Share Tech Mono", monospace;
+  font-family: "IBM Plex Mono", monospace;
   background: $main-color;
   color: black;
   font-size: 13px;
@@ -18,13 +18,14 @@ body {
   padding: 0;
 }
 
-h1 {
-  margin: 0;
+h1,
+h2 {
+  margin: 5px;
 }
 
-ol {
-  margin-block-start: 0.5em;
-  padding-inline-start: 20px;
+ul {
+  list-style-type: none;
+  padding: 0;
 }
 
 .container {
@@ -37,18 +38,22 @@ ol {
   height: calc(100vh - 20px);
   margin: 0;
   display: grid;
-  grid-template-columns: minmax(250px, 1fr) minmax(250px, 3fr);
+  grid-template-columns: minmax(250px, 2fr) minmax(100px, 1fr) minmax(250px, 4fr);
   grid-template-rows: minmax(125px, 1fr) minmax(250px, 3fr);
   grid-row-gap: 10px;
   grid-column-gap: 10px;
   grid-template-areas:
-    "textarea info"
-    "textarea chart";
+    "textarea options info"
+    "textarea chart chart";
+}
+
+.grid-cell {
+  background: $second-color;
 }
 
 textarea {
+  font-family: "Share Tech Mono", monospace;
   grid-area: textarea;
-  background: $second-color;
   @include cell-padding;
   font-size: 13px;
   border: none;
@@ -58,13 +63,18 @@ textarea {
   }
 }
 
-.info {
+.stats {
   grid-area: info;
-  background: $second-color;
   @include cell-padding;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.stats-content {
+  text-align: center;
 }
 
 #chart {
   grid-area: chart;
-  background: $second-color;
 }

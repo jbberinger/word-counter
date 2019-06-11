@@ -14,7 +14,7 @@
 
 // Options //
 
-1. Exclude articles (the, a, etc.)
+1. Minimum word length
 
 2. Case sensitive 
 
