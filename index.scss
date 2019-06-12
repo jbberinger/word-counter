@@ -13,7 +13,7 @@ body {
   font-family: "IBM Plex Mono", monospace;
   background: $main-color;
   color: black;
-  font-size: 13px;
+  font-size: 15px;
   margin: 0;
   padding: 0;
 }
@@ -34,28 +34,149 @@ ul {
 }
 
 .grid {
-  padding: 10px 10px;
+  padding: 10px 10vw;
   height: calc(100vh - 20px);
   margin: 0;
   display: grid;
-  grid-template-columns: minmax(250px, 2fr) minmax(100px, 1fr) minmax(250px, 4fr);
+  grid-template-columns: minmax(250px, 2fr) minmax(100px, 2fr) minmax(150px, 2fr) minmax(150px, 2fr);
   grid-template-rows: minmax(125px, 1fr) minmax(250px, 3fr);
   grid-row-gap: 10px;
   grid-column-gap: 10px;
   grid-template-areas:
-    "textarea options info"
-    "textarea chart chart";
+    "title options stats word-table"
+    "textarea textarea chart chart";
 }
 
 .grid-cell {
   background: $second-color;
+  border-radius: 3px;
+}
+
+.title {
+  grid-area: title;
+  color: $second-color;
+  font-size: 1.5em;
+  & h2 {
+    font-size: 1em;
+    text-align: right;
+  }
+  border: solid 3px;
+  border-radius: 3px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.options-container {
+  @include cell-padding;
+  grid-area: options;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  height: 100%;
+  margin: 0;
+
+  label {
+    font-weight: bold;
+  }
+
+  input[type="checkbox"] {
+    width: 15px;
+    height: 15px;
+    padding: 0;
+    margin: 0;
+  }
+
+  input[type="text"] {
+    width: 40px;
+    height: 25px;
+    text-align: center;
+  }
+
+  input[type="button"] {
+    width: 15px;
+    height: 15px;
+    padding: 0;
+    margin: 0;
+  }
+}
+
+.stats-container {
+  @include cell-padding;
+  grid-area: stats;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stats {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.stat-title {
+  font-weight: bold;
+}
+
+.stat-content {
+}
+
+.word-table-container {
+  @include cell-padding;
+  grid-area: word-table;
+  height: calc(100% - 6px);
+}
+
+.word-table-header {
+  border-spacing: 0;
+  table-layout: fixed;
+  width: 100%;
+  height: 10%;
+  & th {
+    font-size: 15px;
+    //width: calc(100% / 3);
+    text-align: center;
+    padding: 0;
+  }
+}
+
+.scroll-container {
+  height: calc(90% - 6px);
+  width: 100%;
+  overflow: scroll;
+  display: hidden;
+  padding: 0;
+}
+
+.word-table {
+  border-spacing: 0;
+  table-layout: fixed;
+  width: 100%;
+  & td {
+    max-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 15px;
+    text-align: center;
+    padding: 0;
+  }
 }
 
 textarea {
   font-family: "Share Tech Mono", monospace;
   grid-area: textarea;
   @include cell-padding;
-  font-size: 13px;
+  font-size: 14px;
   border: none;
   resize: none;
   &:focus {
@@ -63,18 +184,33 @@ textarea {
   }
 }
 
-.stats {
-  grid-area: info;
-  @include cell-padding;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-}
-
-.stats-content {
-  text-align: center;
-}
-
-#chart {
+.chart {
   grid-area: chart;
+}
+
+#tooltip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  opacity: 0;
+  background: $main-color;
+  border-radius: 3px;
+  pointer-events: none;
+  color: $second-color;
+  font-weight: bold;
+  padding: 5px;
+  transition: opacity ease-in-out 0.2s;
+}
+
+#tooltip-line {
+  height: 0;
+  background: $main-color;
+  border: 0.75px solid $main-color;
+  border-radius: 3px;
+  transform-origin: bottom left;
+  opacity: 0;
+  position: absolute;
+  pointer-events: none;
+  transition: opacity ease-in-out 0.2s;
 }

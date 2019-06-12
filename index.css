@@ -3,7 +3,7 @@ body {
   font-family: "IBM Plex Mono", monospace;
   background: #89abe3;
   color: black;
-  font-size: 13px;
+  font-size: 15px;
   margin: 0;
   padding: 0;
 }
@@ -24,32 +24,197 @@ ul {
 }
 
 .grid {
-  padding: 10px 10px;
+  padding: 10px 10vw;
   height: calc(100vh - 20px);
   margin: 0;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: minmax(250px, 2fr) minmax(100px, 1fr) minmax(250px, 4fr);
-      grid-template-columns: minmax(250px, 2fr) minmax(100px, 1fr) minmax(250px, 4fr);
+  -ms-grid-columns: minmax(250px, 2fr) minmax(100px, 2fr) minmax(150px, 2fr) minmax(150px, 2fr);
+      grid-template-columns: minmax(250px, 2fr) minmax(100px, 2fr) minmax(150px, 2fr) minmax(150px, 2fr);
   -ms-grid-rows: minmax(125px, 1fr) minmax(250px, 3fr);
       grid-template-rows: minmax(125px, 1fr) minmax(250px, 3fr);
   grid-row-gap: 10px;
   grid-column-gap: 10px;
-      grid-template-areas: "textarea options info" "textarea chart chart";
+      grid-template-areas: "title options stats word-table" "textarea textarea chart chart";
 }
 
 .grid-cell {
   background: #bcf8ec;
+  border-radius: 3px;
+}
+
+.title {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: title;
+  color: #bcf8ec;
+  font-size: 1.5em;
+  border: solid 3px;
+  border-radius: 3px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.title h2 {
+  font-size: 1em;
+  text-align: right;
+}
+
+.options-container {
+  padding: 3px 3px;
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: options;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.options {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  height: 100%;
+  margin: 0;
+}
+
+.options label {
+  font-weight: bold;
+}
+
+.options input[type="checkbox"] {
+  width: 15px;
+  height: 15px;
+  padding: 0;
+  margin: 0;
+}
+
+.options input[type="text"] {
+  width: 40px;
+  height: 25px;
+  text-align: center;
+}
+
+.options input[type="button"] {
+  width: 15px;
+  height: 15px;
+  padding: 0;
+  margin: 0;
+}
+
+.stats-container {
+  padding: 3px 3px;
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
+  grid-area: stats;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.stats {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 100%;
+}
+
+.stat-title {
+  font-weight: bold;
+}
+
+.word-table-container {
+  padding: 3px 3px;
+  -ms-grid-row: 1;
+  -ms-grid-column: 4;
+  grid-area: word-table;
+  height: calc(100% - 6px);
+}
+
+.word-table-header {
+  border-spacing: 0;
+  table-layout: fixed;
+  width: 100%;
+  height: 10%;
+}
+
+.word-table-header th {
+  font-size: 15px;
+  text-align: center;
+  padding: 0;
+}
+
+.scroll-container {
+  height: calc(90% - 6px);
+  width: 100%;
+  overflow: scroll;
+  display: hidden;
+  padding: 0;
+}
+
+.word-table {
+  border-spacing: 0;
+  table-layout: fixed;
+  width: 100%;
+}
+
+.word-table td {
+  max-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 15px;
+  text-align: center;
+  padding: 0;
 }
 
 textarea {
   font-family: "Share Tech Mono", monospace;
-  -ms-grid-row: 1;
-  -ms-grid-row-span: 2;
+  -ms-grid-row: 2;
   -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
   grid-area: textarea;
   padding: 3px 3px;
-  font-size: 13px;
+  font-size: 14px;
   border: none;
   resize: none;
 }
@@ -58,30 +223,46 @@ textarea:focus {
   outline: none;
 }
 
-.stats {
-  -ms-grid-row: 1;
+.chart {
+  -ms-grid-row: 2;
   -ms-grid-column: 3;
-  grid-area: info;
-  padding: 3px 3px;
+  -ms-grid-column-span: 2;
+  grid-area: chart;
+}
+
+#tooltip {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: absolute;
+  opacity: 0;
+  background: #89abe3;
+  border-radius: 3px;
+  pointer-events: none;
+  color: #bcf8ec;
+  font-weight: bold;
+  padding: 5px;
+  -webkit-transition: opacity ease-in-out 0.2s;
+  transition: opacity ease-in-out 0.2s;
 }
 
-.stats-content {
-  text-align: center;
-}
-
-#chart {
-  -ms-grid-row: 2;
-  -ms-grid-column: 2;
-  -ms-grid-column-span: 2;
-  grid-area: chart;
+#tooltip-line {
+  height: 0;
+  background: #89abe3;
+  border: 0.75px solid #89abe3;
+  border-radius: 3px;
+  -webkit-transform-origin: bottom left;
+          transform-origin: bottom left;
+  opacity: 0;
+  position: absolute;
+  pointer-events: none;
+  -webkit-transition: opacity ease-in-out 0.2s;
+  transition: opacity ease-in-out 0.2s;
 }
 /*# sourceMappingURL=index.css.map */

@@ -15,32 +15,40 @@
 <body>
 
   <div class="grid">
+
+    <div id="title" class="title">
+      <h1>Word<br>Counter</h1>
+      <h2>by Justin Beringer</h2>
+    </div>
     <textarea id="textarea" class="grid-cell"></textarea>
-
-    <div class="stats grid-cell">
-      <div class="stats-content">
-        <h1 id="total-title" class="stat-title"></h1>
-        <h2 id="total"></h2>
-      </div>
-      <div class="stats-content">
-        <h1 id="most-common-title" class="stat-title"></h1>
-        <h2 id="most-common"></h2>
-      </div>
-      <div class="stats-content">
-        <h1 id="unique-title" class="stat-title"></h1>
-        <h2 id="unique"></h2>
-      </div>
-      <div class="stats-content">
-        <h1 id="longest-title" class="stat-title"></h1>
-        <h2 id="longest"></h2>
+    <div class="options-container grid-cell">
+      <form id="options" class="options">
+        <label>Case Sensitive <input type="checkbox" id="option-case-sensitive" checked="checked"></label>
+        <label>
+          Min Word Length
+          <button id="option-length-down">-</button>
+          <input type="text" id="option-length-text">
+          <button id="option-length-up">+</button>
+        </label>
+        <label>
+          Chart Words
+          <button id="option-chart-down">-</button>
+          <input type="text" id="option-chart-text">
+          <button id="option-chart-up">+</button>
+        </label>
+      </form>
+    </div>
+    <div class="stats-container grid-cell">
+      <div id="stats" class="stats"></div>
+    </div>
+    <div class="word-table-container grid-cell">
+      <table id="word-table-header" class="word-table-header"></table>
+      <div class='scroll-container'>
+        <table id="word-table" class="word-table"></table>
       </div>
     </div>
+    <div id="chart" class="chart grid-cell"></div>
 
-    <div id="options" class="grid-cell">
-
-    </div>
-
-    <div id="chart" class="grid-cell"></div>
   </div>
 
 </body>
