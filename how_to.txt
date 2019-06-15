@@ -11,33 +11,101 @@
 
 // Options //
 
-1. Minimum word length
+1. Case Sensitive: If unchecked, case will be ignored.
 
-2. Case sensitive 
+2. Min Word Length: The minimum word length counted.
+
+3. Chart Words: The number of words included on the chart in descending order.
 
 
 // Sample Text //
 
-The Road Not Taken 
-by Robert Frost
+Light of Other Days
 
-Two roads diverged in a yellow wood,
-And sorry I could not travel both
-And be one traveler, long I stood
-And looked down one as far as I could
-To where it bent in the undergrowth;
-Then took the other, as just as fair,
-And having perhaps the better claim,
-Because it was grassy and wanted wear;
-Though as for that the passing there
-Had worn them really about the same,
-And both that morning equally lay
-In leaves no step had trodden black.
-Oh, I kept the first for another day!
-Yet knowing how way leads on to way,
-I doubted if I should ever come back.
-I shall be telling this with a sigh
-Somewhere ages and ages hence:
-Two roads diverged in a wood, and I-
-I took the one less traveled by,
-And that has made all the difference.
+By Bob Shaw
+
+Leaving the village behind, we followed the heady sweeps of the road up into a land of slow glass. 
+I had never seen one of the farms before and at first found them slightly eerie—an effect heightened by imagination and circumstance. The car's turbine was pulling smoothly and quietly in the damp air so that we seemed to be carried over the convolutions of the road in a kind of supernatural silence. On our right the mountain sifted down into an incredibly perfect valley of timeless pine, and everywhere stood the great frames of slow glass, drinking light. An occasional flash of afternoon sunlight on their wind bracing created an illusion of movement, but in fact the frames were deserted. The rows of windows had been standing on the hillside for years, staring into the valley, and men only cleaned them in the middle of the night when their human presence would not matter to the thirsty glass. 
+They were fascinating, but Selina and I didn't mention the windows. I think we hated each other so much we both were reluctant to sully anything new by drawing it into the nexus of our emotions. The holiday, I had begun to realize, was a stupid idea in the first place. I had thought it would cure everything, but, of course, it didn't stop Selina being pregnant and, worst still, it didn't even stop her being angry about being pregnant. 
+Rationalizing our dismay over her condition, we had circulated the usual statements to the effect that we would have liked having children—but later on, at the proper time. Selina's pregnancy had cost us her well-paid job and with it the new house we had been negotiating and which was far beyond the reach of my income from poetry. But the real source of our annoyance was that we were face to face with the realization that people who say they want children later always mean they want children never. Our nerves were thrumming with the knowledge that we, who had thought ourselves so unique, had fallen into the same biological trap as every mindless rutting creature which ever existed. 
+The road took us along the southern slopes of Ben Cruachan until we began to catch glimpses of the gray Atlantic far ahead. I had just cut our speed to absorb the view better when I noticed the sign spiked to a gatepost. It said: "SLOW GLASS—QUALITY HIGH, PRICES LOW—J. R. HAGAN." On an impulse I stopped the car on the verge, wincing slightly as tough grasses whipped noisily at the bodywork. 
+"Why have we stopped?" Selina's neat, smoke-silver head turned in surprise. 
+"Look at that sign. Let's go up and see what there is. The stuff might be reasonably priced out here." 
+Selina's voice was pitched high with scorn as she refused, but I was too taken with my idea to listen. I had an illogical conviction that doing something extravagant and crazy would set us right again. 
+"Come on," I said, "the exercise might do us some good. We've been driving too long anyway." 
+She shrugged in a way that hurt me and got out of the car. We walked up a path made of irregular, packed clay steps nosed with short lengths of sapling. The path curved through trees which clothed the edge of the hill and at its end we found a low farmhouse. Beyond the little stone building tall frames of slow glass gazed out towards the voice-stilling sight of Cruachan's ponderous descent towards the waters of Loch Linnhe. Most of the panes were perfectly transparent but a few were dark, like panels of polished ebony.
+
+As we approached the house through a neat cobbled yard a tall middle-aged man in ash-colored tweeds arose and waved to us. He had been sitting on the low rubble wall which bounded the yard, smoking a pipe and staring towards the house. At the front window of the cottage a young woman in a tangerine dress stood with a small boy in her arms, but she turned uninterestedly and moved out of sight as we drew near. 
+"Mr. Hagan?" I guessed. 
+"Correct. Come to see some glass, have you? Well, you've come to the right place." Hagan spoke crisply, with traces of the pure highland accent which sounds so much like Irish to the unaccustomed ear. He had one of those calmly dismayed faces one finds on elderly road-menders and philosophers. 
+"Yes," I said. "We're on holiday. We saw your sign." 
+Selina, who usually has a natural fluency with strangers, said nothing. She was looking towards the now empty window with what I thought was a slightly puzzled expression. 
+"Up from London, are you? Well, as I said, you've come to the right place—and at the right time, too. My wife and I don't see many people this early in the season." 
+I laughed. "Does that mean we might be able to buy a little glass without mortgaging our home?" 
+"Look at that now," Hagan said, smiling helplessly. "I've thrown away any advantage I might have had in the transaction. Rose, that's my wife, says I never learn. Still, let's sit down and talk it over." He pointed at the rubble wall, then glanced doubtfully at Selina's immaculate blue skirt. "Wait till I fetch a rug from the house." Hagan limped quickly into the cottage, closing the door behind him. 
+"Perhaps it wasn't such a marvelous idea to come up here," I whispered to Selina, "but you might at least be pleasant to the man. I think I can smell a bargain." 
+"Some hope," she said with deliberate coarseness. "Surely even you must have noticed that ancient dress his wife is wearing! He won't give much away to strangers." 
+"Was that his wife?" 
+"Of course that was his wife." 
+"Well, well," I said, surprised. "Anyway, try to be civil with him. I don't want to be embarrassed." 
+Selina snorted, but she smiled whitely when Hagan reappeared and I relaxed a little. Strange how a man can love a woman and yet at the same time pray for her to fall under a train.
+
+Hagan spread a tartan blanket on the wall and we sat down, feeling slightly self-conscious at having been translated from our city-oriented lives into a rural tableau. On the distant slate of the Loch, beyond the watchful frames of slow glass, a slow-moving steamer drew a white line towards the south. The boisterous mountain air seemed almost to invade our lungs, giving us more oxygen than we required. 
+"Some of the glass farmers around here," Hagan began, "give strangers, such as yourselves, a sales talk about how beautiful the autumn is in this part of Argyll. Or it might be the spring or the winter. I don't do that—any fool knows that a place which doesn't look right in the summer never looks right. What do you say?" 
+I nodded compliantly. 
+"I want you just to take a good look out towards Mull, Mr…." 
+"Garland." 
+"… Garland. That's what you're buying if you buy my glass, and it never looks better than it does at this minute. The glass is in perfect phase, none of it is less than ten years thick—and a four-foot window will cost you two hundred pounds." 
+"Two hundred!" Selina was shocked. "That's as much as they charge at the Scenedow shop in Bond Street." 
+Hagan smiled patiently, then looked closely at me to see if I knew enough about slow glass to appreciate what he had been saying. His price had been much higher than I had hoped—but ten years thick! The cheap glass one found in places like the Vistaplex and Pane-o-rama stores usually consisted of a quarter of an inch of ordinary glass faced with a veneer of slow glass perhaps only ten or twelve months thick. 
+"You don't understand, darling," I said, already determined to buy. "This glass will last ten years and it's in phase." 
+"Doesn't that only mean it keeps time?" 
+Hagan smiled at her again, realizing he had no further necessity to bother with me. "Only, you say! Pardon me, Mrs. Garland, but you don't seem to appreciate the miracle, the genuine honest-to-goodness miracle, of engineering precision needed to produce a piece of glass in phase. When I say the glass is ten years thick it means it takes light ten years to pass through it. In effect, each one of those panes is ten light-years thick—more than twice the distance to the nearest star—so a variation in actual thickness of only a millionth of an inch would …" 
+He stopped talking for a moment and sat quietly looking towards the house. I turned my head from the view of the Loch and saw the young woman standing at the window again. Hagan's eyes were filled with a kind of greedy reverence which made me feel uncomfortable and at the same time convinced me Selina had been wrong. In my experience husbands never looked at wives that way—at least, not at their own. 
+The girl remained in view for a few seconds, dress glowing warmly, then moved back into the room. Suddenly I received a distinct, though inexplicable, impression she was blind. My feeling was that Selina and I were perhaps blundering through an emotional interplay as violent as our own. 
+"I'm sorry," Hagan continued; "I thought Rose was going to call me for something. Now, where was I, Mrs. Garland? Ten light-years compressed into a quarter of an inch means …" 
+I ceased to listen, partly because I was already sold, partly because I had heard the story of slow glass many times before and had never yet understood the principles involved. An acquaintance with scientific training had once tried to be helpful by telling me to visualize a pane of slow glass as a hologram which did not need coherent light from a laser for the reconstitution of its visual information, and in which every photon of ordinary light passed through a spiral tunnel coiled outside the radius of capture of each atom in the glass. This gem of, to me, incomprehensibility not only told me nothing, it convinced me once again that a mind as non-technical as mine should concern itself less with causes than effects. 
+The most important effect, in the eyes of the average individual, was that light took a long time to pass through a sheet of slow glass. A new piece was always jet black because nothing had yet come through, but one could stand the glass beside, say, a woodland lake until the scene emerged, perhaps a year later. If the glass was then removed and installed in a dismal city flat, the flat would—for that year—appear to overlook the woodland lake. During the year it wouldn't be merely a very realistic but still picture—the water would ripple in sunlight, silent animals would come to drink, birds would cross the sky, night would follow day, season would follow season. Until one day, a year later, the beauty held in the subatomic pipelines would be exhausted and the familiar gray cityscape would reappear. 
+Apart from its stupendous novelty value, the commercial success of slow glass was founded on the fact that having a scenedow was the exact emotional equivalent of owning land. The meanest cave dweller could look out on misty parks—and who was to say they weren't his? A man who really owns tailored gardens and estates doesn't spend his time proving his ownership by crawling on his ground, feeling, smelling, tasting it. All he receives from the land are light patterns, and with scenedows those patterns could be taken into coal mines, submarines, prison cells. 
+On several occasions I have tried to write short pieces about the enchanted crystal but, to me, the theme is so ineffably poetic as to be, paradoxically, beyond the reach of poetry—mine, at any rate. Besides, the best songs and verse had already been written, with prescient inspiration, by men who had died long before slow glass was discovered. I had no hope of equaling, for example, Moore with his:
+
+Oft in the stilly night,
+Ere slumber's chain has bound me,
+Fond Memory brings the light
+Of other days around me …
+
+It took only a few years for slow glass to develop from a scientific curiosity to a sizable industry. And much to the astonishment of we poets—those of us who remain convinced that beauty lives though lilies die—the trappings of that industry were no different from those of any other. There were good scenedows which cost a lot of money, and there were inferior scenedows which cost rather less. The thickness, measured in years, was an important factor in the cost but there was also the question of actual thickness, or phase. 
+Even with the most sophisticated engineering techniques available thickness control was something of a hit-and-miss affair. A coarse discrepancy could mean that a pane intended to be five years thick might be five and a half, so that light which entered in summer emerged in winter; a fine discrepancy could mean that noon sunshine emerged at midnight. These incompatibilities had their peculiar charm—many night workers, for example, liked having their own private time zones—but, in general, it cost more to buy scenedows which kept closely in step with real time.
+ 
+Selina still looked unconvinced when Hagan had finished speaking. She shook her head almost imperceptibly and I knew he had been using the wrong approach. Quite suddenly the pewter helmet of her hair was disturbed by a cool gust of wind, and huge clean tumbling drops of rain began to spang round us from an almost cloudless sky.
+"I'll give you a check now," I said abruptly, and saw Selina's green eyes triangulate angrily on my face. "You can arrange delivery?" 
+"Aye, delivery's no problem," Hagan said, getting to his feet. "But wouldn't you rather take the glass with you?" 
+"Well, yes—if you don't mind." I was shamed by his readiness to trust my scrip. 
+"I'll unclip a pane for you. Wait here. It won't take long to slip it into a carrying frame." Hagan limped down the slope towards the seriate windows, through some of which the view towards Linnhe was sunny, while others were cloudy and a few pure black. 
+Selina drew the collar of her blouse closed at her throat. "The least he could have done was invite us inside. There can't be so many fools passing through that he can afford to neglect them." 
+I tried to ignore the insult and concentrated on writing the check. One of the outsize drops broke across my knuckles, splattering the pink paper. 
+"All right," I said, "let's move in under the eaves till he gets back." You worm, I thought as I felt the whole thing go completely wrong. I just had to be a fool to marry you. A prize fool, a fool's fool—and now that you've trapped part of me inside you I'll never ever, never ever, never ever get away. 
+Feeling my stomach clench itself painfully, I ran behind Selina to the side of the cottage. Beyond the window the neat living room, with its coal fire, was empty but the child's toys were scattered on the floor. Alphabet blocks and a wheelbarrow the exact color of freshly pared carrots. As I stared in, the boy came running from the other room and began kicking the blocks. He didn't notice me. A few moments later the young woman entered the room and lifted him, laughing easily and wholeheartedly as she swung the boy under her arm. She came to the window as she had done earlier. I smiled self-consciously, but neither she nor the child responded. 
+My forehead prickled icily. Could they both be blind? I sidled away. 
+Selina gave a little scream and I spun towards her. 
+"The rug!" she said. "It's getting soaked." 
+She ran across the yard in the rain, snatched the reddish square from the dappling wall and ran back, towards the cottage door. Something heaved convulsively in my subconscious. 
+"Selina," I shouted. "Don't open it!" 
+But I was too late. She had pushed open the latched wooden door and was standing, hand over mouth, looking into the cottage. I moved close to her and took the rug from her unresisting fingers. 
+As I was closing the door I let my eyes traverse the cottage's interior. The neat living room in which I had just seen the woman and child was, in reality, a sickening clutter of shabby furniture, old newspapers, cast-off clothing and smeared dishes. It was damp, stinking and utterly deserted. The only object I recognized from my view through the window was the little wheelbarrow, paintless and broken. 
+I latched the door firmly and ordered myself to forget what I had seen. Some men who live alone are good housekeepers; others just don't know how. 
+Selina's face was white. "I don't understand. I don't understand it." 
+"Slow glass works both ways," I said gently. "Light passes out of a house, as well as in." 
+"You mean …?" 
+"I don't know. It isn't our business. Now steady up—Hagan's coming back with our glass." The churning in my stomach was beginning to subside.
+
+Hagan came into the yard carrying an oblong, plastic-covered frame. I held the check out to him, but he was staring at Selina's face. He seemed to know immediately that our uncomprehending fingers had rummaged through his soul. Selina avoided his gaze. She was old and ill-looking, and her eyes stared determinedly towards the nearing horizon. 
+"I'll take the rug from you, Mr. Garland," Hagan finally said. "You shouldn't have troubled yourself over it." 
+"No trouble. Here's the check." 
+"Thank you." He was still looking at Selina with a strange kind of supplication. "It's been a pleasure to do business with you." 
+"The pleasure was mine," I said with equal, senseless formality. I picked up the heavy frame and guided Selina towards the path which led to the road. Just as we reached the head of the now slippery steps Hagan spoke again. 
+"Mr. Garland!" 
+I turned unwillingly. 
+"It wasn't my fault," he said steadily. "A hit-and-run driver got them both, down on the Oban road six years ago. My boy was only seven when it happened. I'm entitled to keep something." 
+I nodded wordlessly and moved down the path, holding my wife close to me, treasuring the feel of her arms locked around me. At the bend I looked back through the rain and saw Hagan sitting with squared shoulders on the wall where we had first seen him. 
+He was looking at the house, but I was unable to tell if there was anyone at the window.
