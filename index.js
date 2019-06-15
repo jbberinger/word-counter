@@ -8,7 +8,7 @@
 const DEFAULT_OPTIONS = {
   isCaseSensitive: true,
   minWordLength: 1,
-  chartWords: 30,
+  chartWords: 50,
 };
 
 const store = {
@@ -31,18 +31,21 @@ const fetchText = async (url) => {
   return response.text();
 };
 
+// Filters out non-alphabetic characters and apostrophies, and returns words of minimum length
+const parseWords = (txt) => {
+  const text = store.options.isCaseSensitive ? txt.toLowerCase() : txt;
+  const regex = /[^a-zA-Z'’-]/g;
+  return text.replace(regex, ' ').split(' ').filter(w => w.length >= store.options.minWordLength);
+};
+
 // Returns an array of counted word objects in descending order
 const countWords = (text) => {
-  const regex = /[^a-zA-Z'’-]/g;
-
-  // Filters out non alphabetic characters and apostrophies
-  const words = text.toLowerCase().replace(regex, ' ').split(' ').filter(w => w);
+  const words = parseWords(text);
   store.words = words;
   const wordCount = [];
 
   // Iterates word array.
   for (let i = 0; i < words.length; i += 1) {
-
     let foundMatch = false;
 
     // Finds word in wordCount and increments counter.
@@ -72,8 +75,15 @@ const updateBarChart = () => {
   // Paints bar chart to svg
   store.barChart = store.svg.selectAll('rect').data(store.dataSet);
 
+  // removes bars based on new data
+  store.barChart.exit().remove();
+
+  // merges changes
+  store.barChart.enter().append('rect');
+
+  store.barChart = store.svg.selectAll('rect').data(store.dataSet);
+
   // appends new bars
-  store.barChart.enter().append('rect').merge(store.barChart);
 
   const yScale = d3.scaleLinear()
     .domain([0, maxY])
@@ -98,6 +108,7 @@ const updateBarChart = () => {
     .attr('height', d => height - yScale(d[1]) - store.chartPadding)
     .attr('x', d => xScale(d[0]))
     .attr('y', d => yScale(d[1]))
+    .attr('border-radius', 3)
     .on('mouseover', function mouseover(d) {
       d3.select(this)
         .attr('fill', '#7b435b');
@@ -125,9 +136,6 @@ const updateBarChart = () => {
       store.tooltipLine
         .style('opacity', 0);
     });
-
-  // removes bars based on new data
-  store.barChart.exit().remove();
 };
 
 const updateStats = () => {
@@ -147,7 +155,7 @@ const updateStats = () => {
     },
     mostCommon: {
       title: 'Most Common Word:',
-      stat: `"${wordCount[0][0]}"`,
+      stat: `"${store.text.length === 0 ? '' : wordCount[0][0]}"`,
     },
     longest: {
       title: 'Longest Word:',
@@ -173,11 +181,10 @@ const updateWordTable = () => {
     const wrapTD = inner => `<td class="word-list-word">${inner}</td>`;
     return wrapTR(`${wrapTD(word)}${wrapTD(count)}${wrapTD(`${percentage}%`)}`);
   }).join(''));
-
 };
 
 // Reduces array to top 50 used words
-const trimData = data => data.slice(0, 50);
+const trimData = data => data.slice(0, store.options.chartWords);
 
 // Wraps timer around function to ensure it is only called
 // after there is a specified delay between calls
@@ -192,19 +199,19 @@ const debounce = (fn, delay) => {
   };
 };
 
-
 const updateAll = () => {
+  store.wordCount = countWords(store.text);
+  store.dataSet = trimData(store.wordCount);
   updateStats();
-  updateBarChart();
   updateWordTable();
+  updateBarChart();
 };
 
-const handleTextInput = async () => {
-  const { value } = document.getElementById('textarea');
+const handleTextInput = () => {
+  const { value } = document.querySelector('#textarea');
   const wordCount = countWords(value);
   store.text = value;
   store.wordCount = wordCount;
-  store.dataSet = trimData(wordCount);
   updateAll();
 };
 
@@ -216,31 +223,30 @@ const handleOptions = (e) => {
       break;
     case 'option-length-down':
       ops.minWordLength = ops.minWordLength > 1 ? ops.minWordLength - 1 : ops.minWordLength;
-      e.target.value = ops.minWordLength;
+      document.querySelector('#option-length-text').value = ops.minWordLength;
       break;
     case 'option-length-up':
       ops.minWordLength += 1;
+      document.querySelector('#option-length-text').value = ops.minWordLength;
       break;
     case 'option-length-text':
-      ops.chartWords = e.target.value;
-      e.target.value = ops.minWordLength;
+      ops.chartWords = document.querySelector('#option-length-text').value;
       break;
     case 'option-chart-down':
       ops.chartWords = ops.chartWords > 1 ? ops.chartWords - 1 : ops.chartWords;
-      e.target.value = ops.chartWords;
+      document.querySelector('#option-chart-text').value = ops.chartWords;
       break;
     case 'option-chart-up':
       ops.chartWords += 1;
+      document.querySelector('#option-chart-text').value = ops.chartWords;
       break;
     case 'option-chart-text':
-      ops.charWords = e.target.value;
-      e.target.value = ops.chartWords;
+      ops.chartWords = document.querySelector('#option-chart-text').value;
       break;
     default:
       break;
   }
-  console.log(ops);
-  //updateAll();
+  updateAll();
 };
 
 const initialize = async (url) => {
@@ -251,7 +257,7 @@ const initialize = async (url) => {
 
   store.wordCount = wordCount;
   store.dataSet = trimData(wordCount);
-  store.chartElement = document.getElementById('chart');
+  store.chartElement = document.querySelector('#chart');
 
   // Acts as an svg canvas
   store.svg = d3.select('#chart').append('svg');
@@ -267,28 +273,24 @@ const initialize = async (url) => {
     .attr('id', 'tooltip-line');
 
   updateAll();
-
   window.addEventListener('resize', debounce(updateBarChart, 50));
-  document.getElementById('textarea').addEventListener('keyup', debounce(handleTextInput, 100));
-  document.getElementById('options').addEventListener('submit', e => e.preventDefault());
+  document.querySelector('#textarea').addEventListener('keyup', debounce(handleTextInput, 100));
+  document.querySelector('#options').addEventListener('submit', e => e.preventDefault());
 
-  const options = document.getElementById('options').getElementsByTagName('input');
-  for (let i = 0; i < options.length; i += 1) {
-    const op = options[i];
+  const options = Array.from(document.querySelector('#options').querySelectorAll('button, input'));
+  options.forEach((element) => {
+    const op = element;
     if (op.type === 'text') {
       op.onkeyup = handleOptions;
-    } else if (op.type === 'button') {
+    } else if (op.type === 'submit') {
       op.onclick = handleOptions;
     } else {
       op.onchange = handleOptions;
     }
-  }
+  });
 
-  document.getElementById('option-length-text').value = store.options.minWordLength;
-  document.getElementById('option-chart-text').value = store.options.chartWords;
+  document.querySelector('#option-length-text').value = store.options.minWordLength;
+  document.querySelector('#option-chart-text').value = store.options.chartWords;
 };
 
-initialize(store.URL).catch((error) => {
-  console.log('error!');
-  console.error(error);
-});
+initialize(store.URL);

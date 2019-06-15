@@ -13,44 +13,50 @@
 </head>
 
 <body>
-
   <div class="grid">
 
     <div id="title" class="title">
-      <h1>Word<br>Counter</h1>
-      <h2>by Justin Beringer</h2>
+      <h1>Word</h1>
+      <h1>Counter</h1>
     </div>
+
     <textarea id="textarea" class="grid-cell"></textarea>
+
     <div class="options-container grid-cell">
       <form id="options" class="options">
-        <label>Case Sensitive <input type="checkbox" id="option-case-sensitive" checked="checked"></label>
+        <label>
+          Case Sensitive
+          <input type="checkbox" id="option-case-sensitive" checked="checked">
+        </label>
         <label>
           Min Word Length
-          <button id="option-length-down">-</button>
+          <button id="option-length-down" class="button">-</button>
           <input type="text" id="option-length-text">
-          <button id="option-length-up">+</button>
+          <button id="option-length-up" class="button">+</button>
         </label>
         <label>
           Chart Words
-          <button id="option-chart-down">-</button>
+          <button id="option-chart-down" class="button">-</button>
           <input type="text" id="option-chart-text">
-          <button id="option-chart-up">+</button>
+          <button id="option-chart-up" class="button">+</button>
         </label>
       </form>
     </div>
+
     <div class="stats-container grid-cell">
       <div id="stats" class="stats"></div>
     </div>
+
     <div class="word-table-container grid-cell">
       <table id="word-table-header" class="word-table-header"></table>
       <div class='scroll-container'>
         <table id="word-table" class="word-table"></table>
       </div>
     </div>
+
     <div id="chart" class="chart grid-cell"></div>
 
   </div>
-
 </body>
 
 </html>
