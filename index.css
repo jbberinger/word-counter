@@ -8,9 +8,9 @@ body {
   padding: 0;
 }
 
-h1,
-h2 {
-  margin: 5px;
+h1 {
+  margin: 3px;
+  font-size: 1.5rem;
 }
 
 ul {
@@ -31,11 +31,11 @@ ul {
   display: grid;
   -ms-grid-columns: minmax(250px, 2fr) minmax(100px, 2fr) minmax(150px, 2fr) minmax(150px, 2fr);
       grid-template-columns: minmax(250px, 2fr) minmax(100px, 2fr) minmax(150px, 2fr) minmax(150px, 2fr);
-  -ms-grid-rows: minmax(125px, 1fr) minmax(250px, 3fr);
-      grid-template-rows: minmax(125px, 1fr) minmax(250px, 3fr);
+  -ms-grid-rows: minmax(125px, 1fr) minmax(125px, 1fr) minmax(250px, 2fr);
+      grid-template-rows: minmax(125px, 1fr) minmax(125px, 1fr) minmax(250px, 2fr);
   grid-row-gap: 10px;
   grid-column-gap: 10px;
-      grid-template-areas: "title options stats word-table" "textarea textarea chart chart";
+      grid-template-areas: "title options stats word-table" "textarea textarea chart chart" "textarea textarea chart chart";
 }
 
 .grid-cell {
@@ -48,7 +48,7 @@ ul {
   -ms-grid-column: 1;
   grid-area: title;
   color: #bcf8ec;
-  font-size: 1.5em;
+  font-size: 1.5rem;
   border: solid 3px;
   border-radius: 3px;
   display: -webkit-box;
@@ -58,13 +58,16 @@ ul {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .title h2 {
-  font-size: 1em;
+  font-size: 1rem;
   text-align: right;
 }
 
@@ -107,21 +110,21 @@ ul {
 }
 
 .options input[type="checkbox"] {
-  width: 15px;
-  height: 15px;
+  width: 18px;
+  height: 18px;
   padding: 0;
   margin: 0;
 }
 
 .options input[type="text"] {
-  width: 40px;
-  height: 25px;
+  width: 30px;
+  height: 20px;
   text-align: center;
 }
 
-.options input[type="button"] {
-  width: 15px;
-  height: 15px;
+.options .button {
+  width: 20px;
+  height: 20px;
   padding: 0;
   margin: 0;
 }
@@ -157,10 +160,17 @@ ul {
       -ms-flex-pack: justify;
           justify-content: space-between;
   height: 100%;
+  max-width: 250px;
 }
 
 .stat-title {
   font-weight: bold;
+}
+
+.stat-content {
+  max-width: 250px;
+  overflow-x: scroll;
+  white-space: nowrap;
 }
 
 .word-table-container {
@@ -179,7 +189,7 @@ ul {
 }
 
 .word-table-header th {
-  font-size: 15px;
+  font-size: 14px;
   text-align: center;
   padding: 0;
 }
@@ -202,7 +212,7 @@ ul {
   max-width: 0;
   overflow: hidden;
   text-overflow: ellipsis;
-  font-size: 15px;
+  font-size: 13px;
   text-align: center;
   padding: 0;
 }
@@ -210,6 +220,7 @@ ul {
 textarea {
   font-family: "Share Tech Mono", monospace;
   -ms-grid-row: 2;
+  -ms-grid-row-span: 2;
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
   grid-area: textarea;
@@ -225,6 +236,7 @@ textarea:focus {
 
 .chart {
   -ms-grid-row: 2;
+  -ms-grid-row-span: 2;
   -ms-grid-column: 3;
   -ms-grid-column-span: 2;
   grid-area: chart;
@@ -264,5 +276,113 @@ textarea:focus {
   pointer-events: none;
   -webkit-transition: opacity ease-in-out 0.2s;
   transition: opacity ease-in-out 0.2s;
+}
+
+@media screen and (max-width: 1380px) {
+  html,
+  body {
+    font-size: 13px;
+  }
+  .container {
+    padding: 10px 10px;
+    height: calc(100vh - 20px);
+  }
+  .grid {
+    padding: 10px 5vw;
+    height: calc(100vh - 20px);
+    margin: 0;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: minmax(250px, 2fr) minmax(100px, 2fr) minmax(150px, 2fr) minmax(150px, 2fr);
+        grid-template-columns: minmax(250px, 2fr) minmax(100px, 2fr) minmax(150px, 2fr) minmax(150px, 2fr);
+    -ms-grid-rows: minmax(125px, 1fr) minmax(125px, 1fr) minmax(250px, 1.5fr);
+        grid-template-rows: minmax(125px, 1fr) minmax(125px, 1fr) minmax(250px, 1.5fr);
+    grid-row-gap: 10px;
+    grid-column-gap: 10px;
+        grid-template-areas: "title options stats word-table" "textarea textarea chart chart" "textarea textarea chart chart";
+  }
+}
+
+@media screen and (max-width: 1080px) {
+  .container {
+    padding: 10px 10px;
+    height: calc(100vh - 20px);
+  }
+  .grid {
+    grid-row-gap: 5px;
+    grid-column-gap: 5px;
+        grid-template-areas: "title chart chart chart" "options stats stats word-table" "textarea textarea textarea textarea";
+  }
+  .stats {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    height: 100%;
+    max-width: 300px;
+  }
+  .stat-content {
+    max-width: 250px;
+    overflow-x: scroll;
+    white-space: nowrap;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  html,
+  body {
+    font-size: 12px;
+  }
+  .container {
+    padding: 10px 10px;
+    height: calc(100vh - 20px);
+  }
+  .grid {
+    padding: 5px 5px;
+    grid-row-gap: 5px;
+    grid-column-gap: 5px;
+    -ms-grid-columns: minmax(100px, 2fr) minmax(100px, 2fr) minmax(100px, 2fr) minmax(100px, 2fr);
+        grid-template-columns: minmax(100px, 2fr) minmax(100px, 2fr) minmax(100px, 2fr) minmax(100px, 2fr);
+    -ms-grid-rows: minmax(50px, 0.25fr) minmax(125px, 1fr) minmax(125px, 1fr) minmax(250px, 1.5fr);
+        grid-template-rows: minmax(50px, 0.25fr) minmax(125px, 1fr) minmax(125px, 1fr) minmax(250px, 1.5fr);
+        grid-template-areas: "title title title title" "options options chart chart" "stats stats word-table word-table" "textarea textarea textarea textarea";
+  }
+  .title {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .stats {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    height: 100%;
+    max-width: 300px;
+  }
+  .stat-content {
+    max-width: 200px;
+    overflow-x: scroll;
+    white-space: nowrap;
+  }
 }
 /*# sourceMappingURL=index.css.map */
