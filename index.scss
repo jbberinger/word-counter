@@ -321,3 +321,15 @@ textarea {
     white-space: nowrap;
   }
 }
+
+@media screen and (max-width: 750px) {
+  .grid {
+    grid-template-columns: 2fr 2fr 2fr 2fr;
+    grid-template-rows: minmax(50px, 0.25fr) minmax(125px, 1fr) minmax(125px, 1fr) minmax(225px, 1.5fr);
+    grid-template-areas:
+      "title title title title"
+      "options options chart chart"
+      "stats stats word-table word-table"
+      "textarea textarea textarea textarea";
+  }
+}
