@@ -135,6 +135,7 @@ ul {
   align-items: center;
   justify-content: center;
   max-height: calc(100% - 6px);
+  max-width: calc(100% - 6px);
   min-height: 0;
 }
 
@@ -143,7 +144,10 @@ ul {
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-between;
-  max-width: 250px;
+  overflow: scroll;
+  min-width: 0;
+  max-width: calc(100% - 6px);
+  height: 100%;
 }
 
 .stat-title {
@@ -151,9 +155,6 @@ ul {
 }
 
 .stat-content {
-  max-width: 250px;
-  overflow-x: scroll;
-  white-space: nowrap;
 }
 
 .word-table-container {
@@ -274,13 +275,17 @@ textarea {
 
   .grid {
     grid-template-columns: minmax(150px, 2fr) minmax(150px, 2fr) minmax(150px, 2fr);
-    grid-template-rows: minmax(125px, 1fr) minmax(125px, 1fr) minmax(250px, 1.5fr);
+    grid-template-rows: minmax(125px, 1fr) minmax(125px, 1fr) minmax(150px, 1.5fr);
     grid-row-gap: 5px;
     grid-column-gap: 5px;
     grid-template-areas:
       "title chart chart"
       "options stats word-table"
       "textarea textarea textarea";
+  }
+
+  textarea {
+    font-size: 12px;
   }
 
   // .stats {
@@ -305,30 +310,30 @@ textarea {
     font-size: 12px;
   }
 
-  .container {
-    height: calc(100vh);
-  }
-
   .grid {
-    grid-row-gap: 5px;
-    grid-column-gap: 5px;
-    grid-template-columns: minmax(75px, 1fr) minmax(75px, 1fr) minmax(75px, 1fr) minmax(75px, 1fr);
-    grid-template-rows: minmax(50px, 0.25fr) minmax(100px, 1fr) minmax(100px, 1fr) minmax(150px, 1.5fr);
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 5px;
+    grid-row-gap: 2.5px;
+    grid-column-gap: 2.5px;
+    grid-template-columns: minmax(50px, 1fr) minmax(50px, 1fr);
+    grid-template-rows: minmax(50px, 0.5fr) minmax(100px, 2fr) minmax(100px, 1fr) minmax(100px, 1fr);
     grid-template-areas:
-      "title title title title"
-      "options options chart chart"
-      "stats stats word-table word-table"
-      "textarea textarea textarea textarea";
+      "title title"
+      "textarea textarea"
+      "options chart"
+      "stats word-table";
   }
 
   .title {
     flex-direction: row;
   }
 
-  // .stats-container {
-  //   overflow: scroll;
-  //   white-space: nowrap;
-  // }
+  .stats-container {
+    overflow: scroll;
+    white-space: nowrap;
+    max-width: 200px;
+  }
 
   // .stats {
   //   display: flex;
@@ -348,5 +353,5 @@ textarea {
   // }
 }
 
-@media screen and (max-width: 450px) {
-}
+// @media screen and (max-width: 450px) {
+// }
