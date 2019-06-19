@@ -85,6 +85,8 @@ ul {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  min-height: 0;
+  max-height: 100%;
 }
 
 .options {
@@ -101,8 +103,6 @@ ul {
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
-  min-height: 0;
-  height: 100%;
   margin: 0;
 }
 
