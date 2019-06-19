@@ -134,7 +134,7 @@ ul {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: calc(100% -6px);
+  max-height: calc(100% - 6px);
   min-height: 0;
 }
 

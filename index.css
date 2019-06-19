@@ -172,7 +172,7 @@ ul {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  height: calc(100% -6px);
+  max-height: calc(100% - 6px);
   min-height: 0;
 }
 
