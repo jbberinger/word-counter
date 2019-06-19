@@ -1,8 +1,8 @@
 /* *
 *TODO:
-* - Clear everything when textarea is empty
 * - Look into word highlighting on chart mouseover
-* - Add option to include numbers
+* - Form valiation
+* - Optimize for mobile
 * */
 
 const DEFAULT_OPTIONS = {

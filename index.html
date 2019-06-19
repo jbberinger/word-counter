@@ -24,27 +24,36 @@
 
     <div class="options-container grid-cell">
       <form id="options" class="options">
-        <label>
-          Case Sensitive
+        <div class="option-flex-container option-case">
+          <label>Case Sensitive</label>
           <input type="checkbox" id="option-case-sensitive" checked="checked">
-        </label>
-        <label>
-          Min Word Length
-          <button id="option-length-down" class="button">-</button>
-          <input type="text" id="option-length-text">
-          <button id="option-length-up" class="button">+</button>
-        </label>
-        <label>
-          Chart Words
-          <button id="option-chart-down" class="button">-</button>
-          <input type="text" id="option-chart-text">
-          <button id="option-chart-up" class="button">+</button>
-        </label>
+        </div>
+
+        <div class="option-flex-container">
+          <label>Min Word Length</label>
+          <div class="option-controls">
+            <button id="option-length-down" class="button">-</button>
+            <input type="text" id="option-length-text">
+            <button id="option-length-up" class="button">+</button>
+          </div>
+        </div>
+
+        <div class="option-flex-container">
+          <label>Chart Words</label>
+          <div class="option-controls">
+            <button id="option-chart-down" class="button">-</button>
+            <input type="text" id="option-chart-text">
+            <button id="option-chart-up" class="button">+</button>
+          </div>
+        </div>
+
       </form>
     </div>
 
     <div class="stats-container grid-cell">
-      <div id="stats" class="stats"></div>
+      <div class="scroll-container">
+        <div id="stats" class="stats"></div>
+      </div>
     </div>
 
     <div class="word-table-container grid-cell">

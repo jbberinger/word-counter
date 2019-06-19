@@ -95,9 +95,9 @@ ul {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
@@ -122,11 +122,39 @@ ul {
   text-align: center;
 }
 
-.options .button {
+.options button {
   width: 20px;
   height: 20px;
   padding: 0;
   margin: 0;
+}
+
+.options label {
+  padding: 5px;
+}
+
+.option-flex-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.option-case {
+  -webkit-box-orient: horizontal !important;
+  -webkit-box-direction: normal !important;
+      -ms-flex-direction: row !important;
+          flex-direction: row !important;
+}
+
+.option-controls {
+  text-align: center;
 }
 
 .stats-container {
@@ -143,6 +171,7 @@ ul {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  height: calc(100% -6px);
 }
 
 .stats {
@@ -293,8 +322,8 @@ textarea:focus {
     margin: 0;
     display: -ms-grid;
     display: grid;
-    -ms-grid-columns: minmax(250px, 2fr) minmax(100px, 2fr) minmax(150px, 2fr) minmax(150px, 2fr);
-        grid-template-columns: minmax(250px, 2fr) minmax(100px, 2fr) minmax(150px, 2fr) minmax(150px, 2fr);
+    -ms-grid-columns: minmax(250px, 1fr) minmax(100px, 1fr) minmax(150px, 1fr) minmax(150px, 1fr);
+        grid-template-columns: minmax(250px, 1fr) minmax(100px, 1fr) minmax(150px, 1fr) minmax(150px, 1fr);
     -ms-grid-rows: minmax(125px, 1fr) minmax(125px, 1fr) minmax(250px, 1.5fr);
         grid-template-rows: minmax(125px, 1fr) minmax(125px, 1fr) minmax(250px, 1.5fr);
     grid-row-gap: 10px;
@@ -309,9 +338,13 @@ textarea:focus {
     height: calc(100vh - 20px);
   }
   .grid {
+    -ms-grid-columns: minmax(150px, 2fr) minmax(150px, 2fr) minmax(150px, 2fr);
+        grid-template-columns: minmax(150px, 2fr) minmax(150px, 2fr) minmax(150px, 2fr);
+    -ms-grid-rows: minmax(125px, 1fr) minmax(125px, 1fr) minmax(250px, 1.5fr);
+        grid-template-rows: minmax(125px, 1fr) minmax(125px, 1fr) minmax(250px, 1.5fr);
     grid-row-gap: 5px;
     grid-column-gap: 5px;
-        grid-template-areas: "title chart chart chart" "options stats stats word-table" "textarea textarea textarea textarea";
+        grid-template-areas: "title chart chart" "options stats word-table" "textarea textarea textarea";
   }
   .stats {
     display: -webkit-box;
@@ -343,15 +376,13 @@ textarea:focus {
     font-size: 12px;
   }
   .container {
-    padding: 10px 10px;
-    height: calc(100vh - 20px);
+    height: calc(100vh);
   }
   .grid {
-    padding: 5px 5px;
     grid-row-gap: 5px;
     grid-column-gap: 5px;
-    -ms-grid-columns: minmax(100px, 2fr) minmax(100px, 2fr) minmax(100px, 2fr) minmax(100px, 2fr);
-        grid-template-columns: minmax(100px, 2fr) minmax(100px, 2fr) minmax(100px, 2fr) minmax(100px, 2fr);
+    -ms-grid-columns: minmax(75px, 1fr) minmax(75px, 1fr) minmax(75px, 1fr) minmax(75px, 1fr);
+        grid-template-columns: minmax(75px, 1fr) minmax(75px, 1fr) minmax(75px, 1fr) minmax(75px, 1fr);
     -ms-grid-rows: minmax(50px, 0.25fr) minmax(125px, 1fr) minmax(125px, 1fr) minmax(250px, 1.5fr);
         grid-template-rows: minmax(50px, 0.25fr) minmax(125px, 1fr) minmax(125px, 1fr) minmax(250px, 1.5fr);
         grid-template-areas: "title title title title" "options options chart chart" "stats stats word-table word-table" "textarea textarea textarea textarea";
@@ -361,6 +392,10 @@ textarea:focus {
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
+  }
+  .stats-container {
+    overflow: scroll;
+    white-space: nowrap;
   }
   .stats {
     display: -webkit-box;
@@ -380,19 +415,16 @@ textarea:focus {
     max-width: 300px;
   }
   .stat-content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     max-width: 200px;
     overflow-x: scroll;
     white-space: nowrap;
-  }
-}
-
-@media screen and (max-width: 750px) {
-  .grid {
-    -ms-grid-columns: 2fr 2fr 2fr 2fr;
-        grid-template-columns: 2fr 2fr 2fr 2fr;
-    -ms-grid-rows: minmax(50px, 0.25fr) minmax(125px, 1fr) minmax(125px, 1fr) minmax(225px, 1.5fr);
-        grid-template-rows: minmax(50px, 0.25fr) minmax(125px, 1fr) minmax(125px, 1fr) minmax(225px, 1.5fr);
-        grid-template-areas: "title title title title" "options options chart chart" "stats stats word-table word-table" "textarea textarea textarea textarea";
   }
 }
 /*# sourceMappingURL=index.css.map */

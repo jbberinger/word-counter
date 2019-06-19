@@ -80,7 +80,7 @@ ul {
 .options {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-evenly;
   height: 100%;
   margin: 0;
@@ -102,12 +102,29 @@ ul {
     text-align: center;
   }
 
-  .button {
+  button {
     width: 20px;
     height: 20px;
     padding: 0;
     margin: 0;
   }
+  label {
+    padding: 5px;
+  }
+}
+
+.option-flex-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.option-case {
+  flex-direction: row !important;
+}
+
+.option-controls {
+  text-align: center;
 }
 
 .stats-container {
@@ -116,6 +133,7 @@ ul {
   display: flex;
   align-items: center;
   justify-content: center;
+  height: calc(100% -6px);
 }
 
 .stats {
@@ -236,7 +254,7 @@ textarea {
     height: calc(100vh - 20px);
     margin: 0;
     display: grid;
-    grid-template-columns: minmax(250px, 2fr) minmax(100px, 2fr) minmax(150px, 2fr) minmax(150px, 2fr);
+    grid-template-columns: minmax(250px, 1fr) minmax(100px, 1fr) minmax(150px, 1fr) minmax(150px, 1fr);
     grid-template-rows: minmax(125px, 1fr) minmax(125px, 1fr) minmax(250px, 1.5fr);
     grid-row-gap: 10px;
     grid-column-gap: 10px;
@@ -254,12 +272,14 @@ textarea {
   }
 
   .grid {
+    grid-template-columns: minmax(150px, 2fr) minmax(150px, 2fr) minmax(150px, 2fr);
+    grid-template-rows: minmax(125px, 1fr) minmax(125px, 1fr) minmax(250px, 1.5fr);
     grid-row-gap: 5px;
     grid-column-gap: 5px;
     grid-template-areas:
-      "title chart chart chart"
-      "options stats stats word-table"
-      "textarea textarea textarea textarea";
+      "title chart chart"
+      "options stats word-table"
+      "textarea textarea textarea";
   }
 
   .stats {
@@ -285,15 +305,13 @@ textarea {
   }
 
   .container {
-    padding: 10px 10px;
-    height: calc(100vh - 20px);
+    height: calc(100vh);
   }
 
   .grid {
-    padding: 5px 5px;
     grid-row-gap: 5px;
     grid-column-gap: 5px;
-    grid-template-columns: minmax(100px, 2fr) minmax(100px, 2fr) minmax(100px, 2fr) minmax(100px, 2fr);
+    grid-template-columns: minmax(75px, 1fr) minmax(75px, 1fr) minmax(75px, 1fr) minmax(75px, 1fr);
     grid-template-rows: minmax(50px, 0.25fr) minmax(125px, 1fr) minmax(125px, 1fr) minmax(250px, 1.5fr);
     grid-template-areas:
       "title title title title"
@@ -306,6 +324,11 @@ textarea {
     flex-direction: row;
   }
 
+  .stats-container {
+    overflow: scroll;
+    white-space: nowrap;
+  }
+
   .stats {
     display: flex;
     flex-direction: column;
@@ -316,20 +339,13 @@ textarea {
   }
 
   .stat-content {
+    display: flex;
+    flex-direction: column;
     max-width: 200px;
     overflow-x: scroll;
     white-space: nowrap;
   }
 }
 
-@media screen and (max-width: 750px) {
-  .grid {
-    grid-template-columns: 2fr 2fr 2fr 2fr;
-    grid-template-rows: minmax(50px, 0.25fr) minmax(125px, 1fr) minmax(125px, 1fr) minmax(225px, 1.5fr);
-    grid-template-areas:
-      "title title title title"
-      "options options chart chart"
-      "stats stats word-table word-table"
-      "textarea textarea textarea textarea";
-  }
+@media screen and (max-width: 450px) {
 }
