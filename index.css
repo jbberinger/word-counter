@@ -173,6 +173,7 @@ ul {
       -ms-flex-pack: center;
           justify-content: center;
   height: calc(100% -6px);
+  min-height: 0;
 }
 
 .stats {
@@ -189,7 +190,6 @@ ul {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  height: 100%;
   max-width: 250px;
 }
 
