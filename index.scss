@@ -82,6 +82,7 @@ ul {
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
+  min-height: 0;
   height: 100%;
   margin: 0;
 
@@ -312,7 +313,7 @@ textarea {
     grid-row-gap: 5px;
     grid-column-gap: 5px;
     grid-template-columns: minmax(75px, 1fr) minmax(75px, 1fr) minmax(75px, 1fr) minmax(75px, 1fr);
-    grid-template-rows: minmax(50px, 0.25fr) minmax(125px, 1fr) minmax(125px, 1fr) minmax(250px, 1.5fr);
+    grid-template-rows: minmax(50px, 0.25fr) minmax(100px, 1fr) minmax(100px, 1fr) minmax(150px, 1.5fr);
     grid-template-areas:
       "title title title title"
       "options options chart chart"

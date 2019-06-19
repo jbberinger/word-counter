@@ -101,6 +101,7 @@ ul {
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
+  min-height: 0;
   height: 100%;
   margin: 0;
 }
@@ -383,8 +384,8 @@ textarea:focus {
     grid-column-gap: 5px;
     -ms-grid-columns: minmax(75px, 1fr) minmax(75px, 1fr) minmax(75px, 1fr) minmax(75px, 1fr);
         grid-template-columns: minmax(75px, 1fr) minmax(75px, 1fr) minmax(75px, 1fr) minmax(75px, 1fr);
-    -ms-grid-rows: minmax(50px, 0.25fr) minmax(125px, 1fr) minmax(125px, 1fr) minmax(250px, 1.5fr);
-        grid-template-rows: minmax(50px, 0.25fr) minmax(125px, 1fr) minmax(125px, 1fr) minmax(250px, 1.5fr);
+    -ms-grid-rows: minmax(50px, 0.25fr) minmax(100px, 1fr) minmax(100px, 1fr) minmax(150px, 1.5fr);
+        grid-template-rows: minmax(50px, 0.25fr) minmax(100px, 1fr) minmax(100px, 1fr) minmax(150px, 1.5fr);
         grid-template-areas: "title title title title" "options options chart chart" "stats stats word-table word-table" "textarea textarea textarea textarea";
   }
   .title {
