@@ -283,20 +283,20 @@ textarea {
       "textarea textarea textarea";
   }
 
-  .stats {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: space-between;
-    height: 100%;
-    max-width: 300px;
-  }
+  // .stats {
+  //   display: flex;
+  //   flex-direction: column;
+  //   align-items: flex-start;
+  //   justify-content: space-between;
+  //   height: 100%;
+  //   max-width: 300px;
+  // }
 
-  .stat-content {
-    max-width: 250px;
-    overflow-x: scroll;
-    white-space: nowrap;
-  }
+  // .stat-content {
+  //   max-width: 250px;
+  //   overflow-x: scroll;
+  //   white-space: nowrap;
+  // }
 }
 
 @media screen and (max-width: 750px) {
@@ -325,27 +325,27 @@ textarea {
     flex-direction: row;
   }
 
-  .stats-container {
-    overflow: scroll;
-    white-space: nowrap;
-  }
+  // .stats-container {
+  //   overflow: scroll;
+  //   white-space: nowrap;
+  // }
 
-  .stats {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: space-between;
-    height: 100%;
-    max-width: 300px;
-  }
+  // .stats {
+  //   display: flex;
+  //   flex-direction: column;
+  //   align-items: flex-start;
+  //   justify-content: space-between;
+  //   height: 100%;
+  //   max-width: 300px;
+  // }
 
-  .stat-content {
-    display: flex;
-    flex-direction: column;
-    max-width: 200px;
-    overflow-x: scroll;
-    white-space: nowrap;
-  }
+  // .stat-content {
+  //   display: flex;
+  //   flex-direction: column;
+  //   max-width: 200px;
+  //   overflow-x: scroll;
+  //   white-space: nowrap;
+  // }
 }
 
 @media screen and (max-width: 450px) {
