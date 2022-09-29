@@ -9,7 +9,7 @@
   "author": "Justin Beringer",
   "license": "MIT",
   "dependencies": {
-    "d3": "^5.9.2"
+    "d3": "^7.6.1"
   },
   "devDependencies": {
     "eslint": "^5.16.0",
